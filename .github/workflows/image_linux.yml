@@ -28,13 +28,6 @@ jobs:
       with:
         repository: GodotExplorer/ECMAScript
         path: modules/ECMAScript/
-      # TODO: Migrate this to use checkout action for ECMAScript.git rather than clone
-#       run: | 
-#         #rm -rf /godot && cd /
-#         #git clone https://github.com/godotengine/godot.git 
-#         #cd ./godot
-#         #git checkout 3.2.2-stable
-#         git clone https://github.com/GodotExplorer/ECMAScript.git ./modules/ECMAScript    
 
     - name: Show folders before
       run: pwd && whoami && ls -R && ls misc
@@ -43,7 +36,7 @@ jobs:
     # We should always be explicit with our flags usage here since it's gonna be sure to always set those flags
     - name: Compilation
       run: |
-        scons -j8 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no builtin_libpng=yes target=release_debug
+        scons -j2 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no target=release_debug
         strip bin/godot.x11.opt.tools.64
         
     - name: Show folders after
