@@ -19,14 +19,12 @@ jobs:
       with:
         repository: lawnjelly/godot
         ref: titan
-        #path: build
 
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    #- uses: actions/checkout@v2
-    #  with:
-    #    repository: lawnjelly/godot-llightmap
-    #    ref: 3.2
-    #    path: modules/llightmap/ 
+    # get javascript module
+    - uses: actions/checkout@v2
+      with:
+        repository: GodotExplorer/ECMAScript
+        path: modules/ECMAScript/
 
     - name: Show folders before
       run: pwd && whoami && ls -R
