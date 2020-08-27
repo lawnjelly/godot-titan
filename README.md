@@ -6,7 +6,7 @@ These are the original repositories for the modules, which contain instructions:
 
 * LLightmap (https://github.com/lawnjelly/godot-llightmap)
 * LPortal (https://github.com/lawnjelly/godot-lportal)
-* LSimd (https://github.com/lawnjelly/godot-simd)
+* LSimd (https://github.com/lawnjelly/godot-lsimd)
 
 ## Releases
 
