@@ -1,6 +1,6 @@
 # This workflow creates Godot 3.x with added third party modules
 
-name: Main Linux
+name: Image Linux
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -75,7 +75,8 @@ jobs:
       env:
         SCONS_CACHE: ${{github.workspace}}/.scons_cache/
       run: |
-        scons -j2 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no builtin_libpng=yes target=release_debug
+        scons -j8 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no builtin_libpng=yes target=release_debug
+        strip bin/godot.x11.opt.tools.64
         
     - name: Show folders after
       run: pwd && whoami && ls -R
