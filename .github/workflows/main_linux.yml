@@ -25,6 +25,9 @@ jobs:
         repository: lawnjelly/godot
         ref: titan
 
+    - name: Show folders before
+      run: pwd && whoami && ls -R
+
     - uses: actions/checkout@v2
       
       # Azure repositories are not reliable, we need to prevent azure giving us packages.
@@ -67,9 +70,6 @@ jobs:
         python -m pip install scons
         python --version
         scons --version
-
-    - name: Show folders before
-      run: pwd && whoami && ls -R
         
     # We should always be explicit with our flags usage here since it's gonna be sure to always set those flags
     - name: Compilation
