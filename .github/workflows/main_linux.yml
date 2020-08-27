@@ -26,9 +26,9 @@ jobs:
         ref: titan
 
     - name: Show folders before
-      run: pwd && whoami && ls -R
+      run: pwd && whoami && ls -R && ls misc
 
-    - uses: actions/checkout@v2
+    #- uses: actions/checkout@v2
       
       # Azure repositories are not reliable, we need to prevent azure giving us packages.
     - name: Make apt sources.list use the default Ubuntu repositories
