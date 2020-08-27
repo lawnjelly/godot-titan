@@ -1,0 +1,66 @@
+# This workflow creates Godot 3.x with added third party modules
+
+name: Main
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on: [workflow_dispatch]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: lawnjelly/godot
+        ref: titan
+        #path: build
+
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    #- uses: actions/checkout@v2
+    #  with:
+    #    repository: lawnjelly/godot-llightmap
+    #    ref: 3.2
+    #    path: modules/llightmap/ 
+
+    - name: Show folders before
+      run: pwd && whoami && ls -R
+
+    # Use python 3.x release (works cross platform; best to keep self contained in it's own step)
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        # Semantic version range syntax or exact version of a Python version
+        python-version: '3.x'
+        # Optional - x64 or x86 architecture, defaults to x64
+        architecture: 'x64'
+
+    # Setup scons, print python version and scons version info, so if anything is broken it won't run the build.
+    - name: Configuring Python packages
+      run: |
+        python -c "import sys; print(sys.version)"
+        python -m pip install scons pywin32
+        python --version
+        scons --version
+        
+    # We should always be explicit with our flags usage here since it's gonna be sure to always set those flags
+    - name: Compilation
+      #env:
+      #  SCONS_CACHE: /.scons_cache/
+      run: |
+        scons -j2 verbose=no warnings=all werror=no platform=windows tools=yes tests=no target=release_debug
+        
+    - name: Show folders after
+      run: pwd && whoami && ls -R
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: windows-editor (x64)
+        path: bin/godot.windows.opt.tools.64.exe
+        #path: build/modules/llightmap/README.md
