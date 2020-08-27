@@ -33,7 +33,7 @@ jobs:
       # Azure repositories are not reliable, we need to prevent azure giving us packages.
     - name: Make apt sources.list use the default Ubuntu repositories
       run: |
-        sudo cp -f misc/ci/sources.list /etc/apt/sources.list
+        #sudo cp -f misc/ci/sources.list /etc/apt/sources.list
         sudo apt-get update
         
     # Install all packages (except scons)
@@ -76,7 +76,7 @@ jobs:
       env:
         SCONS_CACHE: ${{github.workspace}}/.scons_cache/
       run: |
-        scons -j2 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no target=release_debug
+        scons -j2 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no builtin_libpng=yes target=release_debug
         
     - name: Show folders after
       run: pwd && whoami && ls -R
