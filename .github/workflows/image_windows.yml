@@ -42,7 +42,7 @@ jobs:
     # We should always be explicit with our flags usage here since it's gonna be sure to always set those flags
     - name: Compilation
       run: |
-        scons -j4 verbose=no warnings=moderate werror=no platform=windows bits=64 tools=yes tests=no target=release_debug
+        scons -j8 verbose=no warnings=moderate werror=no platform=windows bits=64 tools=yes tests=no target=release_debug
         
     - name: Show folders after
       run: pwd && whoami && ls -R
