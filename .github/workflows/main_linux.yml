@@ -21,6 +21,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
+      with:
+        repository: lawnjelly/godot
+        ref: titan
+
+    - uses: actions/checkout@v2
       
       # Azure repositories are not reliable, we need to prevent azure giving us packages.
     - name: Make apt sources.list use the default Ubuntu repositories
@@ -62,12 +67,6 @@ jobs:
         python -m pip install scons
         python --version
         scons --version
-
-
-    - uses: actions/checkout@v2
-      with:
-        repository: lawnjelly/godot
-        ref: titan
 
     - name: Show folders before
       run: pwd && whoami && ls -R
