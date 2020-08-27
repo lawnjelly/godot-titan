@@ -32,11 +32,16 @@ jobs:
     - name: Show folders before
       run: pwd && whoami && ls -R && ls misc
 
-        
+    - name: Prepare ming
+        update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
+        update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix
+        update-alternatives --set i686-w64-mingw32-gcc /usr/bin/i686-w64-mingw32-gcc-posix
+        update-alternatives --set i686-w64-mingw32-g++ /usr/bin/i686-w64-mingw32-g++-posix      
+
     # We should always be explicit with our flags usage here since it's gonna be sure to always set those flags
     - name: Compilation
       run: |
-        scons -j2 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no target=release_debug
+        scons -j4 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no target=release_debug
         strip bin/godot.x11.opt.tools.64
         
     - name: Show folders after
@@ -45,5 +50,5 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: godot-titan-linux-editor (x64)
-        path: bin/godot.x11.opt.tools.64
+        name: godot-titan-windows-editor (x64)
+        path: bin/godot.windows.opt.tools.64.exe
