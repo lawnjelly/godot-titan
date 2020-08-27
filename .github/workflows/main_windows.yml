@@ -21,13 +21,14 @@ jobs:
         ref: titan
 
     # get javascript module
-    - uses: actions/checkout@v2
-      with:
-        repository: GodotExplorer/ECMAScript
-        path: modules/ECMAScript/
+    # doesn't work with visual studio
+#     - uses: actions/checkout@v2
+#       with:
+#         repository: GodotExplorer/ECMAScript
+#         path: modules/ECMAScript/
 
-    - name: Show folders before
-      run: pwd && whoami && ls -R
+#     - name: Show folders before
+#       run: pwd && whoami && ls -R
 
     # Use python 3.x release (works cross platform; best to keep self contained in it's own step)
     - name: Set up Python 3.x
@@ -53,8 +54,8 @@ jobs:
       run: |
         scons -j2 verbose=no warnings=moderate werror=no platform=windows tools=yes tests=no target=release_debug
         
-    - name: Show folders after
-      run: pwd && whoami && ls -R
+#    - name: Show folders after
+#      run: pwd && whoami && ls -R
         
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
