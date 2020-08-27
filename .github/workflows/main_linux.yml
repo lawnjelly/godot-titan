@@ -76,7 +76,7 @@ jobs:
       env:
         SCONS_CACHE: ${{github.workspace}}/.scons_cache/
       run: |
-        scons -j2 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no builtin_libpng=yes target=release_debug
+        scons -j2 verbose=no warnings=moderate werror=no platform=x11 tools=yes tests=no target=release_debug
         strip bin/godot.x11.opt.tools.64
                 
     - name: Show folders after
