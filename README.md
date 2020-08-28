@@ -1,5 +1,5 @@
 # godot-titan
-Builds of Godot 3.x with my modules and modifications
+Precompiled builds of Godot 3.x with my modules and modifications, and selected third party modules.
 
 ## Modules
 These are the original repositories for the modules, which contain instructions:
