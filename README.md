@@ -24,3 +24,4 @@ These are the original repositories for the modules, which contain instructions:
 * LPortal usable but needs some tidying to remove lightmap functionality that has moved to LLightmap.
 * LSimd should be okay, CPU detection code hasn't been tested under windows so it may be using non-SIMD path.
 
+### 0.11 (LLightmap 0.30)
