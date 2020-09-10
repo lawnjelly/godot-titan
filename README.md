@@ -19,12 +19,19 @@ These are the original repositories for the modules, which contain instructions:
 
 ## Releases
 
-### 0.12 (LLightmap 0.31) (September 8th 2020)
+### 0.13 (LLightmap 0.34)
+(September 10th 2020)
+* LLightmap reworked more robust uvmapping
+
+### 0.12 (LLightmap 0.31)
+(September 8th 2020)
 * LLightmap lightprobes first implementation.
 
-### 0.11 (LLightmap 0.30) (August 31st 2020)
+### 0.11 (LLightmap 0.30)
+(August 31st 2020)
 
-### 0.10 (LLightmap 0.27, LPortal 0.21, LSimd 0.10, ECMAScript) (August 27th 2020)
+### 0.10 (LLightmap 0.27, LPortal 0.21, LSimd 0.10, ECMAScript)
+(August 27th 2020)
 * LLightmap mostly working but no lightprobes.
 * LPortal usable but needs some tidying to remove lightmap functionality that has moved to LLightmap.
 * LSimd should be okay, CPU detection code hasn't been tested under windows so it may be using non-SIMD path.
