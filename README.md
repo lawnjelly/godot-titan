@@ -19,6 +19,14 @@ These are the original repositories for the modules, which contain instructions:
 
 ## Releases
 
+### 0.15 (LLightmap 0.36)
+(September 10th 2020)
+* LLightmap improved error message boxes
+
+### 0.14 (LLightmap 0.35)
+(September 10th 2020)
+* LLightmap bug fix in texture sampling
+
 ### 0.13 (LLightmap 0.34)
 (September 10th 2020)
 * LLightmap reworked more robust uvmapping
