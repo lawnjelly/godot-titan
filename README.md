@@ -19,32 +19,13 @@ These are the original repositories for the modules, which contain instructions:
 
 ## Releases
 
-### 0.16 (LLightmap 0.37)
-(September 11th 2020)
-* LLightmap another texture sampling bug
-* Improvements to backward tracing (artifacts and speed)
+* 0.16 LLightmap another texture sampling bug, improvements to backward tracing (artifacts and speed)
+* 0.15 LLightmap improved error message boxes
+* 0.14 LLightmap bug fix in texture sampling
+* 0.13 LLightmap reworked more robust uvmapping
+* 0.12 LLightmap lightprobes first implementation.
+* 0.11
+* 0.10 LLightmap mostly working but no lightprobes.
 
-### 0.15 (LLightmap 0.36)
-(September 10th 2020)
-* LLightmap improved error message boxes
-
-### 0.14 (LLightmap 0.35)
-(September 10th 2020)
-* LLightmap bug fix in texture sampling
-
-### 0.13 (LLightmap 0.34)
-(September 10th 2020)
-* LLightmap reworked more robust uvmapping
-
-### 0.12 (LLightmap 0.31)
-(September 8th 2020)
-* LLightmap lightprobes first implementation.
-
-### 0.11 (LLightmap 0.30)
-(August 31st 2020)
-
-### 0.10 (LLightmap 0.27, LPortal 0.21, LSimd 0.10, ECMAScript)
-(August 27th 2020)
-* LLightmap mostly working but no lightprobes.
-* LPortal usable but needs some tidying to remove lightmap functionality that has moved to LLightmap.
-* LSimd should be okay, CPU detection code hasn't been tested under windows so it may be using non-SIMD path.
+LPortal usable but needs some tidying to remove lightmap functionality that has moved to LLightmap.
+LSimd should be okay, CPU detection code hasn't been tested under windows so it may be using non-SIMD path.
