@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         repository: lawnjelly/godot
-        ref: titan
+        ref: ewok3
 
     # get javascript module
     # doesn't work with visual studio
@@ -78,5 +78,5 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: godot-titan-windows-editor (x64)
+        name: godot-ewok-windows-editor (x64)
         path: bin/godot.windows.opt.tools.64.exe
