@@ -19,6 +19,8 @@ These are the original repositories for the modules, which contain instructions:
 
 ## Releases
 
+* 0.19 LLightmap improved lightprobe generation code
+* LPortal fixed order of operations bug (which caused single frame delay in culling)
 * 0.18 LLightmap multithreaded backwards tracing, fixed small bug in low quality forward rendering setting
 * 0.17 LLightmap new bidirectional backwards tracing, updated project settings and docs
 * 0.16 LLightmap another texture sampling bug, improvements to backward tracing (artifacts and speed)
