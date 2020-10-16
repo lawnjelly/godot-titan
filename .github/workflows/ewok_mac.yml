@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         repository: lawnjelly/godot
-        ref: mac_orphan
+        ref: ewok3
         
     - name: Show folders before
       run: pwd && whoami && ls -R && ls misc
