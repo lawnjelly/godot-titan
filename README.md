@@ -19,6 +19,7 @@ These are the original repositories for the modules, which contain instructions:
 
 ## Releases
 
+* 0.21 LLightmap 40% faster backward tracing, OpenImageDenoise
 * 0.19 LLightmap improved lightprobe generation code \
 LPortal fixed order of operations bug (which caused single frame delay in culling)
 * 0.18 LLightmap multithreaded backwards tracing, fixed small bug in low quality forward rendering setting
